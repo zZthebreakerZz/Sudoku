@@ -1,4 +1,4 @@
 # Sudoku
 
-Code by Nguyen Huu Tuan from TDT
+Coded by Nguyen Huu Tuan from TDTU.
 This is for my project in school.
