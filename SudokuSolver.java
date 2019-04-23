@@ -12,6 +12,18 @@ public class SudokuSolver {
 	public void setGrid(int[][][] grid) {
 		this.grid = grid;
 	}
+	
+	public void swapRow() {
+		int[] temp = this.grid[0][1];
+		this.grid[0][1] = this.grid[1][0];
+		this.grid[1][0] = temp;
+		temp = this.grid[0][2];
+		this.grid[0][2] = this.grid[2][0];
+		this.grid[2][0] = temp;
+		temp = this.grid[1][2];
+		this.grid[1][2] = this.grid[2][1];
+		this.grid[2][1] = temp;
+	}
 
 	public void createSolution() {
 		int[][] form = LatinSquare.generateLatinSquare(3).getSquare();
@@ -27,6 +39,7 @@ public class SudokuSolver {
 			int[][] block3 = ls3.getSquare();
 			this.grid[i] = append(block1, block2, block3);
 		}
+		swapRow();
 	}
 	
 	public static int[][] append(int[][]... matrices) {
